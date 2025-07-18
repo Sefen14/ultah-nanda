@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selamat Ulang Tahun Nanda 💜</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="slide active" id="slide1">
+      <h1>Selamat Ulang Tahun Sayangkuu 💜</h1>
+      <iframe src="bunga.html" frameborder="0" class="bunga-frame"></iframe>
+      <button onclick="nextSlide()">Next ➤</button>
+    </div>
+    <div class="slide" id="slide2">
+      <img src="foto1.jpg" alt="Foto Nanda">
+      <p>Kamu adalah semangatku setiap hari 💖</p>
+      <button onclick="prevSlide()">◀ Back</button>
+      <button onclick="nextSlide()">Next ➤</button>
+    </div>
+    <div class="slide" id="slide3">
+      <img src="foto2.jpg" alt="Foto Nanda">
+      <p>Terima kasih selalu hadir untuk aku 💫</p>
+      <button onclick="prevSlide()">◀ Back</button>
+    </div>
+  </div>
+  <script>
+    let current = 0;
+    const slides = document.querySelectorAll('.slide');
+    function showSlide(index) {
+      slides.forEach((s, i) => s.classList.toggle('active', i === index));
+      current = index;
+    }
+    function nextSlide() {
+      if (current < slides.length - 1) showSlide(current + 1);
+    }
+    function prevSlide() {
+      if (current > 0) showSlide(current - 1);
+    }
+  </script>
+</body>
+</html>
